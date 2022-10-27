@@ -30,15 +30,15 @@ time, mark, audio, video {
 
 
 .container{
-    background-color: rgba(89, 70, 228, 0.437);
+    background-color: #e2e8f0;
 
     display: grid;
     grid-template-columns: 2fr 7fr;
-    grid-template-rows: 10% 1fr;
+    grid-template-rows: minmax(160px,14%) 1fr;
 }
 
 .sidebar{
-    border: red 1px solid;
+    
     grid-area: 1/1/3/2;
     background-color: #0078b8;
     color: white;
@@ -50,6 +50,7 @@ time, mark, audio, video {
     padding: 10px;
 
     .sidebar-element{
+        cursor: pointer;
         display: flex;
         align-items: center;
         gap: 10px;
@@ -62,6 +63,14 @@ time, mark, audio, video {
 
         
     }
+    .sidebar-element:hover{
+        transform: scale(1.02);
+       
+    }
+    .nn:hover{
+        transform: scale(1.0);
+    }
+
     .top-buttons>.sidebar-element{
     padding-top: 10px;
     }
@@ -71,67 +80,170 @@ time, mark, audio, video {
 }
 
 .header{
-    border: solid green 3px;
+    background-color: white;
     grid-area: 1/2/2/3;
+    box-shadow: 2em 0 2em rgba(0,0,0,0.3);
 
     .top-header{
-        display: grid;
-        grid-template-columns: repeat(4,1fr);
-        grid-template-rows: 1fr;
+        display: flex;
+        
+
+        .right-side{
+            display: flex;
+            align-items: center;
+            gap:15px;
+            margin-right: 5%;
+            div{
+                cursor: pointer;
+            }
+            .notifications{
+                img{
+                    width: 45px;
+                }
+                
+            }
+            div:hover{
+                transform: scale(1.05);
+            }
+            .profile-small-photo{
+                img{
+                    width: 55px;
+                    border-radius: 50%;
+                }
+            }
+            .profile-nickname-small{
+                font-weight: 700;
+                font-size: 1.4rem; 
+            }
+        }
+
+        .search-bar{
+            
+            flex:2 1 auto;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap:14px;
+            
+            
+            input{
+                width: 80%;
+                padding: 10px 10px;
+                border-radius: 17px;
+                background-color: #e2e8f0;
+                border: none;
+                background-image: url('searchicon.png');
+                background-position: 10px 10px;
+                background-repeat: no-repeat;
+                padding-left: 40px;
+                font-size: 1.4rem;
+               
+                
+            }
+            
+            img{
+                width: 33px;
+                height: 33px;
+            }
+            
+        }
+        
     }
 
     .bot-header{
-        display: grid;
-        grid-template-columns: 3fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         .greetings{
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
+            display: flex;
+            justify-content: flex-start;
+            margin-left: 30px;
+            gap:0;
+            font-weight: 700;
+            gap:20px;
+            align-items: center;
+            
 
             .profile-medium-photo{
                 grid-area:1/1/3/2;
+                img{
+                    width:60px;
+                    border-radius: 50%;
+                }   
             }
         }
 
         .buttons{
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            display: flex;
+            gap:10px;
+            margin-right: 2rem;
 
+            div{
+                background-color: #0078b8;
+                color: white;
+                font-weight: 700;
+                padding: 10px 31px;
+                border-radius: 20px;
+
+                cursor: pointer;
+            }
+            div:hover{
+                transform: scale(1.1);
+            }
         }
     }
 }
 
 .main{
     display: grid;
-    grid-template-columns: 7fr 3fr;
-    grid-template-rows: 60px 1fr 40px 1fr;
+    grid-template-columns: 7fr 2fr;
+    grid-template-rows: 50px 1fr 40px 1fr;
     gap:15px;
+    padding: 20px;
 
     .projects{
-        background-color: rgba(199, 17, 17, 0.569);
+        background-color: #e2e8f0;
         grid-area: 2/1/5/2;
 
         padding: 10px;
+        padding-top: 0;
 
         display: grid;
         
         justify-content: center;
-        grid-template-columns: repeat(auto-fit,minmax(250px,300px));
+        
+        grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
         grid-template-rows: 1fr 1fr 1fr;
-        gap:15px;
+        gap:20px;
+        row-gap: 10px;
+        
         .card{
-            border: 2px yellow solid;
+            border-left: 9px #f0b429 solid;
+            background-color: white;
+            border-radius: 10px;
+           //width: 390px;
+            height: 200px;
+            padding: 16px;
             
 
-
-            padding: 20px;
-
+            display: flex;
+            flex-direction: column;
+            .card-description{
+                flex:1 0 auto;
+            }
         
             .card-buttons{
                 display: flex;
                 justify-content: flex-end;
+                gap:10px;
+                img{
+                    cursor: pointer;
+                    height: 22px;
+                }
+                img:hover{
+                    transform: scale(1.2);
+                }
             }
         }
 
@@ -150,18 +262,26 @@ time, mark, audio, video {
     }
     
     .announcements{
-        background-color: rgba(14, 127, 14, 0.461);
+        background-color: white;
+        border-radius: 10px;
         grid-area: 2/2/3/3;
-        padding: 30px;
+        padding: 20px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         gap:15px;
 
+        .ann-card{
+            padding: 20px;
+            .ann-tittle{
+                font-weight: 700;
+            }
+        }
+
             
         .ann-card:nth-child(2){
-            border-top: rgba(100, 96, 96, 0.797) solid 3px;
-            border-bottom: rgba(100, 96, 96, 0.797) solid 3px;
+            border-top: rgba(131, 127, 127, 0.685) solid 1.5px;
+            border-bottom: rgba(100, 96, 96, 0.555) solid 1.5px;
         }
         
         
@@ -171,21 +291,33 @@ time, mark, audio, video {
         
     }
     .trending{
-        background-color: rgba(0, 0, 255, 0.741);
+        background-color: white;
+        border-radius: 10px;
         grid-area: 4/2/4/3;
-        padding: 20px;
+        padding: 15px;
+        align-items: center;
+        
 
-        height: 100%;
-        display: grid;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
+        
+        display: flex;
+        flex-direction: column;
+        gap:15px;
 
         .tren-card{
            display: flex;
+            gap:15px;
 
+            .tren-nick-wrapper{
+                .tren-nickname{
+                    font-weight: 700;
+                }
+            }
            .logo{
-            width: 70px;
-            height: 70px;
-            border: 1px solid red;
+            img{
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+            }
            }
            
         }
