@@ -27,33 +27,111 @@ body {
   background-color: rgba(89, 70, 228, 0.437);
   display: grid;
   grid-template-columns: 2fr 7fr;
-  grid-template-rows: 20% 1fr;
+  grid-template-rows: 10% 1fr;
 }
 
 .sidebar {
   border: red 1px solid;
   grid-area: 1/1/3/2;
+  display: flex;
+  flex-direction: column;
+  gap: 5%;
 }
 
 .header {
   border: solid green 3px;
   grid-area: 1/2/2/3;
 }
+.header .top-header {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr;
+}
+.header .bot-header {
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.header .bot-header .greetings {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.header .bot-header .greetings .profile-medium-photo {
+  grid-area: 1/1/3/2;
+}
+.header .bot-header .buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
 
 .main {
   display: grid;
   grid-template-columns: 7fr 3fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 60px 1fr 40px 1fr;
+  gap: 15px;
 }
 .main .projects {
   background-color: rgba(199, 17, 17, 0.569);
-  grid-area: 1/1/3/2;
+  grid-area: 2/1/5/2;
+  padding: 10px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 300px));
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+}
+.main .projects .card {
+  border: 2px yellow solid;
+  padding: 20px;
+}
+.main .projects .card .card-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+.main .projects-tittle {
+  grid-area: 1/1/1/1;
+  padding: 15px;
+  padding-left: 40px;
+}
+.main .ann-tittle {
+  grid-area: 1/2/2/2;
+  padding: 15px;
+  padding-left: 0;
 }
 .main .announcements {
   background-color: rgba(14, 127, 14, 0.461);
-  grid-area: 1/2/2/3;
+  grid-area: 2/2/3/3;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  gap: 15px;
+}
+.main .announcements .ann-card:nth-child(2) {
+  border-top: rgba(100, 96, 96, 0.797) solid 3px;
+  border-bottom: rgba(100, 96, 96, 0.797) solid 3px;
+}
+.main .tren-tittle {
+  grid-area: 3/2/4/3;
 }
 .main .trending {
   background-color: rgba(0, 0, 255, 0.741);
-  grid-area: 2/2/3/3;
+  grid-area: 4/2/4/3;
+  padding: 20px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+}
+.main .trending .tren-card {
+  display: flex;
+}
+.main .trending .tren-card .logo {
+  width: 70px;
+  height: 70px;
+  border: 1px solid red;
+}
+.main .trending .tren-nick-wrapper {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
