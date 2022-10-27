@@ -158,14 +158,12 @@ body {
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 7fr 2fr;
+  display: flex;
   gap: 15px;
   padding: 20px;
 }
 .main .projects {
   background-color: #e2e8f0;
-  grid-area: 2/1/5/2;
   height: 80%;
   padding: 10px;
   padding-top: 0;
@@ -203,17 +201,19 @@ body {
   grid-area: 1/1/1/1;
   padding: 15px;
   padding-left: 40px;
+  font-weight: 700;
 }
 .main .ann-tittle {
-  grid-area: 1/2/2/2;
   padding: 15px;
   padding-left: 0;
+}
+.main .ann-wrapper .ann-tittle {
+  font-weight: 700;
 }
 .main .announcements {
   background-color: white;
   border-radius: 10px;
-  grid-area: 2/2/3/3;
-  padding: 10px;
+  padding: 5px 10px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr;
@@ -231,15 +231,16 @@ body {
   border-top: rgba(131, 127, 127, 0.685) solid 1.5px;
   border-bottom: rgba(100, 96, 96, 0.555) solid 1.5px;
 }
-.main .tren-tittle {
-  grid-area: 3/2/4/3;
+.main .tren-wrapper .tren-tittle {
+  font-weight: 700;
+  padding: 20px 0;
 }
 .main .trending {
   background-color: white;
   border-radius: 10px;
   grid-area: 4/2/4/3;
   padding: 15px;
-  align-items: center;
+  align-items: flex-start;
   box-shadow: 0.2em 0 0.5em rgba(0, 0, 0, 0.3);
   height: 350px;
   display: flex;

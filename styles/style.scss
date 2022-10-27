@@ -196,16 +196,19 @@ time, mark, audio, video {
 }
 
 .main{
-    display: grid;
-    grid-template-columns: 7fr 2fr;
-   // grid-template-rows: 50px 1fr;
+    display: flex;
     gap:15px;
     padding: 20px;
     
+    .project-wrapper{
+        
+    }
+
+
 
     .projects{
         background-color: #e2e8f0;
-        grid-area: 2/1/5/2;
+        
         height: 80%;
         padding: 10px;
         padding-top: 0;
@@ -254,19 +257,25 @@ time, mark, audio, video {
         grid-area: 1/1/1/1;
         padding: 15px;
         padding-left: 40px;
+        font-weight: 700;
     }
 
     .ann-tittle{
-        grid-area: 1/2/2/2;
+        
         padding: 15px;
         padding-left: 0;
     }
     
+    .ann-wrapper{
+        .ann-tittle{
+            font-weight: 700;
+        }
+    }
     .announcements{
         background-color: white;
         border-radius: 10px;
-        grid-area: 2/2/3/3;
-        padding: 10px;
+       
+        padding: 5px 10px;
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr;
@@ -274,7 +283,7 @@ time, mark, audio, video {
         box-shadow: 0.2em 0 0.5em rgba(0,0,0,0.3);
         align-items: center;
     
-
+        
         .ann-card{
             padding: 20px;
             .ann-tittle{
@@ -290,16 +299,21 @@ time, mark, audio, video {
         
         
     }
-    .tren-tittle{
-        grid-area: 3/2/4/3;
+
+    .tren-wrapper{
+        .tren-tittle{
+            font-weight: 700;
+            padding: 20px 0;
+        }
         
     }
+    
     .trending{
         background-color: white;
         border-radius: 10px;
         grid-area: 4/2/4/3;
         padding: 15px;
-        align-items: center;
+        align-items: flex-start;
         box-shadow: 0.2em 0 0.5em rgba(0,0,0,0.3);
         height: 350px;
 
