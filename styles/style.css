@@ -262,4 +262,14 @@ body {
 .main .trending .tren-nick-wrapper {
   display: flex;
   flex-direction: column;
+}
+
+.null {
+  flex: 1 0 auto;
+}
+
+.cred a {
+  text-decoration: none;
+  color: white;
+  outline: none;
 }/*# sourceMappingURL=style.css.map */
